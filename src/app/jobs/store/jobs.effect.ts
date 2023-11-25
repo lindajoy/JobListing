@@ -1,6 +1,3 @@
-// export class JobsEffect {
-// }
-
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { select, Store } from '@ngrx/store';
@@ -8,7 +5,7 @@ import { EMPTY, map, mergeMap, withLatestFrom } from 'rxjs';
 import { JobService } from '../../services/jobs.service';
 import { jobsFetchAPISuccess , invokeJobsAPI  } from './jobs.action';
 import { selectJobs } from './jobs.selector';
- 
+
 @Injectable()
 export class JobsEffect {
   constructor(
@@ -23,7 +20,6 @@ export class JobsEffect {
       withLatestFrom(this.store.pipe(select(selectJobs))),
       mergeMap(([, jobfromstore]) => {
         if (jobfromstore.length > 0) {
-            debugger;
           return EMPTY;
         }
         return this.jobService

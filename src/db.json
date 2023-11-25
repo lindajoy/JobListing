@@ -12,29 +12,57 @@
       "id": "583c3ac3f38e84297c0020323",
       "jobTitle": "Program Manager",
       "companyName": "Azure",
-      "location": "Uganda",
+      "location": "Kampala",
       "description": "Your primary focus will be developing a user-friendly and efficient iOS application that integrates seamlessly with our existing Photo AI "
     },
     {
       "id": "3903c3ac3f38e84297c0020323",
       "jobTitle": "Hardware Engineer",
       "companyName": "Google",
-      "location": "Uganda",
-      "description": "Build awesome UIs for applications"
+      "location": "Kampala",
+      "description": "design, develop, and optimize electronic hardware components and systems, ensuring they meet performance, reliability, and cost requirements. "
     },
     {
       "id": "3903c3ac3f38e84297c0020320",
       "jobTitle": "Support Engineer",
       "companyName": "D-Light",
-      "location": "Kenya",
+      "location": "Nairobi",
       "description": "Fix the hotfixes/Production issues on our platform"
     },
     {
       "id": "3903c3ac3f38e84297c0020320",
       "jobTitle": "Engineering Manager",
-      "companyName": "Microsft",
-      "location": "Kenya",
+      "companyName": "Microsoft",
+      "location": "Nairobi",
       "description": "Manage a team of remarkable software engineers"
+    },
+    {
+      "id": "97903c3ac3f38e84297c0020320",
+      "jobTitle": "SCRUM",
+      "companyName": "Milan Company",
+      "location": "Eldoret",
+      "description": "Help us in creating awesome stand ups."
+    },
+    {
+      "id": "67903c3ac3f38e84297c0020320",
+      "jobTitle": "Javascript Developer",
+      "companyName": "Azure Cloud Services",
+      "location": "Cape Town",
+      "description": "Write awesome Javascript code and help us build the next top notch application"
+    },
+    {
+      "id": "67903c3ac3f38e84297c0020320",
+      "jobTitle": "UX/UI designer",
+      "companyName": "Kimemia's company",
+      "location": "Dodoma",
+      "description": "Create user-centered and visually appealing interfaces by understanding user needs."
+    },
+    {
+      "id": "67903c3ac3f38e84297c0020320",
+      "jobTitle": "Warehouse Architect",
+      "companyName": "Muthunkinju Industry",
+      "location": "Arusha",
+      "description": "Design and optimize physical warehouse spaces and processes."
     }
   ] 
 }

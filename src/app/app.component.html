@@ -1,12 +1,17 @@
 <h1 class="header"> Job Listings </h1>
 
-<nav class="navbar navbar-light">
-  <form class="search-form d-flex justify-content-center">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-  </form>
-</nav>
-
+<div class="col-3 mx-auto">
+  <div class="mb-3">
+    <input
+      [formControl]="searchControl"
+      type="search"
+      class="form-control"
+      id="search"
+      placeholder="Search..."
+      aria-describedby="filter"
+    />
+  </div>
+</div>
 <div class="first-row d-flex justify-content-between pr-40 pl-40">
   <div class="btn-group">
     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -44,17 +49,16 @@
 
 <div class="container mt-2">
   <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col" *ngFor="let book of books$ | async">
+    <div class="col" *ngFor="let job of jobs$ | async">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">{{ book.companyName }}</h5>
+          <h5 class="card-title">{{ job.companyName }}</h5>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">{{ book.id }}</li>
-          <li class="list-group-item">${{ book.description }}</li>
+          <li class="list-group-item">{{ job.jobTitle }}, {{job.location}}</li>
+          <li class="list-group-item">{{ job.description }}</li>
         </ul>
       </div>
     </div>
-  </div> 
+  </div>
 </div>
-
