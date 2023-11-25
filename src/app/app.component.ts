@@ -1,11 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { invokeJobsAPI } from './jobs/store/jobs.action';
+import { selectJobs } from './jobs/store/jobs.selector';
+import { JobReducer } from './jobs/store/jobs.reducer';
+import { select, Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
+  constructor(private store: Store) {}
+  books! : any[]
+  books$ = this.store.pipe(select(selectJobs));
+
+ 
+  ngOnInit(): void {
+    this.store.dispatch(invokeJobsAPI());
+  }
+
   title = 'job-listings';
 
   elements: any = [
