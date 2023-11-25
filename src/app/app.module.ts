@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { environment } from 'src/environments/environment';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
@@ -27,7 +26,6 @@ import {  HttpClientModule } from '@angular/common/http';
     StoreModule.forRoot({}, {}),
     EffectsModule.forRoot([]),
     EffectsModule.forFeature([JobsEffect]),
-
     StoreModule.forFeature('joblistings', JobReducer),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
   ],
