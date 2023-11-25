@@ -1,0 +1,40 @@
+{
+  "jobs": 
+    [
+      {
+      "id": "583c3ac3f38e84297c002546",
+      "jobTitle": "Engineer",
+      "companyName": "D-Light",
+      "location": "Nairobi",
+      "description": "Your primary focus will be developing a user-friendly and efficient iOS application that integrates seamlessly with our existing Photo AI "
+    },
+    {
+      "id": "583c3ac3f38e84297c0020323",
+      "jobTitle": "Program Manager",
+      "companyName": "Azure",
+      "location": "Uganda",
+      "description": "Your primary focus will be developing a user-friendly and efficient iOS application that integrates seamlessly with our existing Photo AI "
+    },
+    {
+      "id": "3903c3ac3f38e84297c0020323",
+      "jobTitle": "Hardware Engineer",
+      "companyName": "Google",
+      "location": "Uganda",
+      "description": "Build awesome UIs for applications"
+    },
+    {
+      "id": "3903c3ac3f38e84297c0020320",
+      "jobTitle": "Support Engineer",
+      "companyName": "D-Light",
+      "location": "Kenya",
+      "description": "Fix the hotfixes/Production issues on our platform"
+    },
+    {
+      "id": "3903c3ac3f38e84297c0020320",
+      "jobTitle": "Engineering Manager",
+      "companyName": "Microsft",
+      "location": "Kenya",
+      "description": "Manage a team of remarkable software engineers"
+    }
+  ] 
+}
