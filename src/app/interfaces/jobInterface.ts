@@ -5,6 +5,7 @@ export interface Job {
   companyName: string;
   jobType: string;
   description: string;
+  createdon:string;
 }
 
 export interface DataTableState {

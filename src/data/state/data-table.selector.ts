@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { DataTableState } from '../../interfaces/jobInterface';
+import { DataTableState } from '../../app/interfaces/jobInterface';
 import * as fromDataTable from './data-table.reducer';
 
 export const selectDataTableState = createFeatureSelector<DataTableState>(fromDataTable.dataTableFeatureKey);
@@ -19,16 +19,15 @@ export const selectData = createSelector(
   selectFilterBy,
   (tableData, sortDirection, sortKey, filterQuery, filterBy) => {
     let filteredData = [...tableData];
+    console.log("Sort DIRECTION", sortDirection)
+    console.log("Sort DIRECTION", sortKey)
+
 
     // Filter Array
     if (filterQuery !== '') {
       filteredData = filteredData.filter((item) => {
         const result = filterBy
           .map((filterBy) => {
-            console.log(filteredData);
-            console.log('k',item[filterBy]);
-            console.log('k',item[filterBy]);
-
             return item[filterBy]?.toLowerCase().includes(filterQuery);
           })
           .some((item) => item);
@@ -41,10 +40,12 @@ export const selectData = createSelector(
     }
 
     const sortedData = [...filteredData].sort((a, b) => {
+      debugger;
       const paramA = a[sortKey];
       const paramB = b[sortKey];
       return compare(paramA, paramB, sortDirection);
     });
+    console.log(sortedData);
     return sortedData;
   }
 );

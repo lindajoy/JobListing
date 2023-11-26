@@ -11,16 +11,6 @@
     />
   </div>
 </div>
-
-<!-- <div class="forms">
-  <mat-form-field appearance="fill" style="font-size: 28px" aria-placeholder="Choose Location">
-      <mat-select (selectionChange)="someMethod($event.value)">
-          <mat-option *ngFor="let row of data$ | async" [value]="row.location">
-            {{row.location}}
-          </mat-option>
-        </mat-select>
-    </mat-form-field>
-</div> -->
 <ng-container *ngIf="(data$ | async) as data; let error">
 <app-data-table [data]="data" [headerRow]="headerRow"></app-data-table>
 </ng-container>

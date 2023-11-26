@@ -1,39 +1,73 @@
 .search-form {
-    width: 100%;
+  width: 100%;
 }
 
 .header {
-    padding: 20px;
-    text-align: center;
-    margin: auto;
-    font-size: 45px;
-    font-family: Arial, Helvetica, sans-serif;
+  padding: 20px;
+  text-align: center;
+  margin: auto;
+  font-size: 45px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.search-form input{
-    width: 60%;
+.search-form input {
+  width: 60%;
 }
 
-.search-form button{
-    margin-left: 25px;
+.search-form button {
+  margin-left: 25px;
 }
 
 .first-row {
-    padding: 5px 35%;
+  padding: 5px 35%;
 }
 
 .job-title {
-    color: #004F00;
+  color: #004f00;
+}
+
+th {
+  cursor: pointer;
+  user-select: none;
+}
+
+.bi {
+  width: 10px;
+  height: 9px;
+  font-size: 12px;
+  color: rgb(100, 100, 100);
+}
+
+.sort-header-active {
+  color: rgb(219, 109, 6);
+}
+
+.table-container {
+    display: flex;
+    justify-content:  center;
+}
+
+.table-light {
+    width: 80%;
+}
+
+.data-table {
+    display: flex;
+    justify-content: center;
+}
+
+.datatable-table {
+    width: 80%;
 }
 
 .mat-form-field {
-    font-size: 28px;
+  font-size: 28px;
 }
 
 .reset-button {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

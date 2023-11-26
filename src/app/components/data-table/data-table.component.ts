@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 
-import * as dataTableActions from '../../data/state/data-table.action';
-import * as dataTableSelectors from '../../data/state/data-table.selector';
+import * as dataTableActions from '../../../data/state/data-table.action';
+import * as dataTableSelectors from '../../../data/state/data-table.selector';
 import { DataTableState } from 'src/app/interfaces/jobInterface';
-import { setFilterBy } from '../../data/state/data-table.action';
+import { setFilterBy } from '../../../data/state/data-table.action';
 
 
 @Component({
@@ -27,6 +27,7 @@ export class DataTableComponent implements OnInit {
   
 
   constructor(private store: Store<DataTableState>) {}
+  headers = ['Job Title', 'Company Name', 'Job Type','Location' ,'Description'];
 
   ngOnInit(): void {
     this.store.dispatch(dataTableActions.setData({ data: this.data }));
@@ -48,15 +49,22 @@ export class DataTableComponent implements OnInit {
     this.store.dispatch(dataTableActions.setSortKey({ sortKey: sortKey }));
   }
 
-   handleSelection(selectedItem: string) {
-    // Perform actions based on the selected item
-    console.log("Selected:", selectedItem);
-    // You can add any custom logic here
-  }
+  dateConverter(unix: number) {
+    const date = new Date(unix);
+    return date.toLocaleDateString('en-US')
+   }
 
   reset (){
     this.store.dispatch(dataTableActions.resetDataTableStore());
     this.store.dispatch(dataTableActions.setData(({ data: this.data })));
+  }
+
+  uniqueJobTypes(data: any[], prop:string): string[] {
+    const uniqueJobTypesSet = new Set<string>();
+    data.forEach(row => {
+      uniqueJobTypesSet.add(row[prop]);
+    });
+    return Array.from(uniqueJobTypesSet);
   }
 
   filterByField(value: string, prop: string) {

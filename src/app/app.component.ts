@@ -1,7 +1,7 @@
 import { Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
 import { invokeJobsAPI } from './jobs/store/jobs.action';
 import { selectJobs } from './jobs/store/jobs.selector';
-import { setFilterBy } from '../../src/app/data/state/data-table.action'
+import { setFilterBy } from '../data/state/data-table.action'
 import { JobReducer } from './jobs/store/jobs.reducer';
 import { select, Store } from '@ngrx/store';
 import { FormControl } from '@angular/forms';
@@ -17,10 +17,12 @@ import { JobService } from './services/jobs.service';
 export class AppComponent implements OnInit, OnDestroy {
   searchControl = new FormControl('');
   headerRow = [
-    { header: 'Job Title', key: 'jobTitle', hasSort: true },
-    { header: 'location', key: 'location', hasSort: true },
-    { header: 'Company', key: 'companyName', hasSort: true },
-    { header: 'Description', key: 'description', hasSort: true },
+    { header: 'Date Posted', key: 'createdOn', hasSort: true },
+    { header: 'Company', key: 'companyName ', hasSort: false },
+    { header: 'Job Title', key: 'jobTitle', hasSort: false },
+    { header: 'JobType', key: 'jobType', hasSort: false},
+    { header: 'Location', key: 'location', hasSort: true },
+    { header: 'Description', key: 'description', hasSort: false },
   ];
 
   constructor(private store: Store, private jobService: JobService) {}

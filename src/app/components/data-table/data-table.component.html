@@ -1,32 +1,4 @@
- <div class="forms">
-
-
-   <!-- <mat-form-field appearance="fill" style="font-size: 28px" aria-placeholder="Choose Location">
-        <mat-select (selectionChange)="someMethod($event.value)">
-            <mat-option *ngFor="let row of tableData$ | async" [value]="row.location">
-              {{row.location}}
-            </mat-option>
-          </mat-select>
-      </mat-form-field> -->
-
-   <!-- <mat-form-field appearance="fill" style="font-size: 28px" aria-placeholder="Choose Location">
-        <mat-select (selectionChange)="someMethod2($event.value)">
-            <mat-option *ngFor="let row of tableData$ | async" [value]="row.companyName">
-              {{row.companyName}}
-            </mat-option>
-          </mat-select>
-      </mat-form-field> -->
-
-   <!-- <mat-form-field appearance="fill" style="font-size: 28px" aria-placeholder="Choose Location">
-        <mat-select (selectionChange)="someMethod2($event.value)">
-            <mat-option *ngFor="let row of tableData$ | async" [value]="row.companyName">
-              {{row.companyName}}
-            </mat-option>
-          </mat-select>
-      </mat-form-field> -->
- </div>
-
- <div class="first-row d-flex justify-content-between pr-40 pl-40">
+<div class="first-row d-flex justify-content-between pr-40 pl-40">
    <div class="btn-group">
      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
        Job Title
@@ -42,9 +14,9 @@
        Location
      </button>
      <ul class="dropdown-menu">
-       <li *ngFor="let row of tableData$ | async">
-         <a class="dropdown-item" href="#" (click)="filterByField(row.location,'location' )">{{ row.location }}</a>
-       </li>
+       <li *ngFor="let location of uniqueJobTypes(tableData$ | async,'location')">
+        <a class="dropdown-item" href="#" (click)="filterByField(location, 'location')">{{ location }}</a>
+      </li>
      </ul>
    </div>
 
@@ -53,10 +25,9 @@
        Company
      </button>
      <ul class="dropdown-menu">
-       <li *ngFor="let row of tableData$ | async">
-         <a class="dropdown-item" href="#"
-           (click)="filterByField(row.companyName, 'companyName')">{{ row.companyName }}</a>
-       </li>
+       <li *ngFor="let companyName of uniqueJobTypes(tableData$ | async,'companyName')">
+        <a class="dropdown-item" href="#" (click)="filterByField(companyName, 'companyName')">{{ companyName }}</a>
+      </li>
      </ul>
    </div>
    <div class="btn-group">
@@ -64,8 +35,8 @@
        Job Type
      </button>
      <ul class="dropdown-menu">
-       <li *ngFor="let row of tableData$ | async">
-         <a class="dropdown-item" href="#" (click)="filterByField(row.jobType, 'jobType')">{{ row.jobType }}</a>
+       <li *ngFor="let jobType of uniqueJobTypes(tableData$ | async,'jobType')">
+         <a class="dropdown-item" href="#" (click)="filterByField(jobType, 'jobType')">{{ jobType }}</a>
        </li>
      </ul>
    </div>
@@ -75,7 +46,7 @@
    <button class="btn btn-danger" (click)="reset()">Reset All FIlters</button>
  </div>
 
- <div class="container mt-2">
+ <!-- <div class="container mt-2">
    <div class="row row-cols-1 row-cols-md-3 g-4">
      <div class="col" *ngFor="let row of tableData$ | async">
        <div class="card">
@@ -94,4 +65,40 @@
        </div>
      </div>
    </div>
- </div>
+ </div> -->
+
+ <div class="table-container">
+ <table class="table table-light table-striped-columns">
+    <thead>
+      <tr>
+        <th scope="col" *ngFor="let headerItem of headerRow" (click)="onSort(headerItem)">
+          <div class="d-flex">
+            <h6>{{ headerItem.header }}</h6>
+  
+            <div class="d-flex flex-column ms-2" *ngIf="headerItem.hasSort" >
+              <i
+                class="bi bi-caret-up-fill"
+                [class.sort-header-active]="(sortDirection$ | async) === 'asc' && headerItem.key === (sortKey$ | async)"
+              >
+              </i>
+              <i
+                class="bi bi-caret-down-fill"
+                [class.sort-header-active]="(sortDirection$ | async) === 'desc' && headerItem.key === (sortKey$ | async)"
+              >
+              </i>
+            </div>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of tableData$ | async">
+        <td>{{ dateConverter(row.createdon)}}</td>
+        <td>{{ row.companyName }}</td>
+        <td>{{ row.jobTitle }}</td>
+        <td>{{ row.jobType }}</td>
+        <td>{{ row.location}}</td>
+        <td>{{ row.description}}</td>
+      </tr>
+    </tbody>
+  </table> 
