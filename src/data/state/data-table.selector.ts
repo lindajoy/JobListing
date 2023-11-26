@@ -19,12 +19,11 @@ export const selectData = createSelector(
   selectFilterBy,
   (tableData, sortDirection, sortKey, filterQuery, filterBy) => {
     let filteredData = [...tableData];
-    console.log("Sort DIRECTION", sortDirection)
-    console.log("Sort DIRECTION", sortKey)
-
+    
 
     // Filter Array
     if (filterQuery !== '') {
+      console.log('Filtered data here!')
       filteredData = filteredData.filter((item) => {
         const result = filterBy
           .map((filterBy) => {
@@ -40,12 +39,10 @@ export const selectData = createSelector(
     }
 
     const sortedData = [...filteredData].sort((a, b) => {
-      debugger;
       const paramA = a[sortKey];
       const paramB = b[sortKey];
       return compare(paramA, paramB, sortDirection);
     });
-    console.log(sortedData);
     return sortedData;
   }
 );

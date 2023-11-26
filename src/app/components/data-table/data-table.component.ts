@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 
 import * as dataTableActions from '../../../data/state/data-table.action';
@@ -24,7 +24,8 @@ export class DataTableComponent implements OnInit {
   public sortDirection$!: Observable<string>;
   public sortKey$!: Observable<string>;
   public tableData$!: Observable<any>;
-  
+  private sortKeySubject = new BehaviorSubject<string>('createdOn');
+
 
   constructor(private store: Store<DataTableState>) {}
   headers = ['Job Title', 'Company Name', 'Job Type','Location' ,'Description'];

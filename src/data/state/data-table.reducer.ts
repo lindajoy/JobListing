@@ -33,7 +33,6 @@ export const dataTableReducer = createReducer(
       console.log(state.sortKey);
       sortDirection = 'asc';
     } else {
-      debugger;
       sortDirection = setSortDirection(state.sortDirection);
     }
     return {
