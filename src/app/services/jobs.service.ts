@@ -9,9 +9,7 @@ import { Job } from '../interfaces/jobInterface';
 export class JobService {
   constructor(private http: HttpClient) {}
 
-  get() {
-    debugger;
-    console.log(this.http.get<Job[]>('http://localhost:3000/jobs'))
+  get() { 
     return this.http.get<Job[]>('http://localhost:3000/jobs');
   }
 }

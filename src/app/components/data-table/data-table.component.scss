@@ -1,0 +1,39 @@
+.search-form {
+    width: 100%;
+}
+
+.header {
+    padding: 20px;
+    text-align: center;
+    margin: auto;
+    font-size: 45px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.search-form input{
+    width: 60%;
+}
+
+.search-form button{
+    margin-left: 25px;
+}
+
+.first-row {
+    padding: 5px 35%;
+}
+
+.job-title {
+    color: #004F00;
+}
+
+.mat-form-field {
+    font-size: 28px;
+}
+
+.reset-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

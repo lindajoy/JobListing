@@ -1,12 +1,13 @@
 import { Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
-import { invokeJobsAPI, setFilterBy } from './jobs/store/jobs.action';
+import { invokeJobsAPI } from './jobs/store/jobs.action';
 import { selectJobs } from './jobs/store/jobs.selector';
+import { setFilterBy } from '../../src/app/data/state/data-table.action'
 import { JobReducer } from './jobs/store/jobs.reducer';
 import { select, Store } from '@ngrx/store';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { filter, map, startWith } from 'rxjs/operators';
-import { query } from '@angular/animations';
+import { JobService } from './services/jobs.service';
 
 @Component({
   selector: 'app-root',
@@ -15,26 +16,51 @@ import { query } from '@angular/animations';
 })
 export class AppComponent implements OnInit, OnDestroy {
   searchControl = new FormControl('');
+  headerRow = [
+    { header: 'Job Title', key: 'jobTitle', hasSort: true },
+    { header: 'location', key: 'location', hasSort: true },
+    { header: 'Company', key: 'companyName', hasSort: true },
+    { header: 'Description', key: 'description', hasSort: true },
+  ];
 
-  constructor(private store: Store) {}
+  constructor(private store: Store, private jobService: JobService) {}
   jobs$ = this.store.pipe(select(selectJobs));
+  data$!: Observable<any[] | null>;
   job!: any[];
 
   ngOnInit(): void {
     this.jobs$.subscribe((a) => (this.job = a));
-    console.log(this.job);
     this.store.dispatch(invokeJobsAPI());
 
-    this.searchControl.valueChanges.subscribe((query) => {
-      console.log('Search Query', query);
-    });
+
+    this.data$ = this.jobService.get()
+                     .pipe(startWith(null));
 
     this.searchControl.valueChanges
       .pipe(map((query) => (query as string).toLowerCase()))
       .subscribe((query) => {
-         console.log("Here is my search string", query)
-         this.store.dispatch(setFilterBy({ filters: { filterBy: ['location', 'jobTitle', 'companyName'], query } }));
+        this.store.dispatch(
+          setFilterBy({
+            filters: {
+              filterBy: ['location', 'jobTitle', 'companyName', 'description','jobType'],
+              query,
+            },
+          })
+        );
       });
+  }
+
+  someMethod(value: string) {
+    const query = value.trim().toLocaleLowerCase();
+    console.log(typeof(query));
+    this.store.dispatch(
+      setFilterBy({
+        filters: {
+          filterBy: ['location'],
+          query
+        },
+      })
+    );
   }
 
   ngOnDestroy(): void {}

@@ -3,6 +3,7 @@ export interface Job {
   location: string;
   jobTitle: string;
   companyName: string;
+  jobType: string;
   description: string;
 }
 

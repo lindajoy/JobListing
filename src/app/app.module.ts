@@ -12,9 +12,16 @@ import  { JobReducer } from './jobs/store/jobs.reducer';
 import  { JobsEffect  } from './jobs/store/jobs.effect';
 import {  HttpClientModule } from '@angular/common/http';
 import { DataTableComponent } from "./components/data-table/data-table.component";
+import { DataModule } from './data/data.module';
+import { DataTableEffects } from './data/state/data-table.effect';
+import { dataTableReducer } from './data/state';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent, DataTableComponent
     ],
     providers: [],
     bootstrap: [AppComponent],
@@ -25,12 +32,18 @@ import { DataTableComponent } from "./components/data-table/data-table.component
         HttpClientModule,
         ReactiveFormsModule,
         NoopAnimationsModule,
+        MatSelectModule,
+        MatInputModule,
+        MatFormFieldModule,
+        DataModule,
         StoreModule.forRoot({}, {}),
         EffectsModule.forRoot([]),
+        EffectsModule.forFeature([DataTableEffects]),
         EffectsModule.forFeature([JobsEffect]),
         StoreModule.forFeature('joblistings', JobReducer),
+        StoreModule.forFeature('dataTable',dataTableReducer ),
+
         StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
-        DataTableComponent
     ]
 })
 export class AppModule { }
