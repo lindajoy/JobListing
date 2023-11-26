@@ -63,7 +63,7 @@ export class DataTableComponent implements OnInit {
   uniqueJobTypes(data: any[], prop:string): string[] {
     const uniqueJobTypesSet = new Set<string>();
     data.forEach(row => {
-      uniqueJobTypesSet.add(row[prop]);
+      uniqueJobTypesSet.add(row[prop].trim());
     });
     return Array.from(uniqueJobTypesSet);
   }

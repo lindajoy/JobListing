@@ -4,29 +4,29 @@
       {
       "id": "583c3ac3f38e84297c002546",
       "createdon": 1671032563515,
-      "jobTitle": "Engineer",
+      "jobTitle": "Support Engineer",
       "companyName": "D-Light",
       "location": "Nairobi",
       "jobType":"Freelance",
-      "description": "Fix the hotfixes/Production issues on our platform"
+      "description": "Fix the hotfixess on our platform"
     },
     {
       "id": "583c3ac3f38e84297c0020323",
       "createdon": 1661032563516,
       "jobTitle": "Program Manager",
-      "companyName": "Azure",
+      "companyName": "Microsoft",
       "location": "Kampala",
       "jobType":"Freelance",
-      "description": "Developuser-friendly and efficient iOS applications "
+      "description": "Develop efficient iOS applications "
     },
     {
       "id": "3903c3ac3f38e84297c0020323",
       "createdon": 1673032563516,
-      "jobTitle": "Hardware Engineer",
-      "companyName": "Google",
+      "jobTitle": "Software Engineer",
+      "companyName": "Microsoft",
       "location": "Kampala",
       "jobType":"Freelance",
-      "description": "Design, develop, and optimize electronic hardware components and systems. "
+      "description": "Design, and develop software using C# "
     },
     {
       "id": "3903c3ac3f38e84297c0020320",
@@ -40,7 +40,7 @@
     {
       "id": "3903c3ac3f38e84297c0020320",
       "createdon": 1666632563517,
-      "jobTitle": "Engineering Manager",
+      "jobTitle": "Software Engineer",
       "companyName": "Microsoft",
       "location": "Nairobi",
       "jobType":"Remote",
@@ -49,8 +49,8 @@
     {
       "id": "97903c3ac3f38e84297c0020320",
       "createdon": 1675532563516,
-      "jobTitle": "SCRUM",
-      "companyName": "Milan Company",
+      "jobTitle": "Scrum Master",
+      "companyName": "D-Light",
       "location": "Eldoret",
       "jobType":"Contract",
       "description": "Help us in creating awesome stand ups."
@@ -58,29 +58,20 @@
     {
       "id": "67903c3ac3f38e84297c0020320",
       "createdon": 1676632563516,
-      "jobTitle": "Javascript Developer",
-      "companyName": "Azure Cloud Services",
-      "location": "Cape Town",
+      "jobTitle": "Software Engineer",
+      "companyName": "D-Light",
+      "location": "Eldoret",
       "jobType":"Remote",
-      "description": "Write awesome Javascript code and help us build the next top notch application"
-    },
-    {
-      "id": "67903c3ac3f38e84297c0020320",
-      "createdon": 1666632563517,
-      "jobTitle": "UX/UI designer",
-      "companyName": "Kimemia's company",
-      "location": "Dodoma",
-      "jobType":"Remote",
-      "description": "Create user-centered and visually appealing interfaces by understanding user needs."
+      "description": "Write awesome Javascript code."
     },
     {
       "id": "67903c3ac3f38e84297c0020320",
       "createdon": 1566632563516,
-      "jobTitle": "Warehouse Architect",
-      "companyName": "Muthunkinju Industry",
-      "location": "Arusha",
+      "jobTitle": "Scrum Master",
+      "companyName": "D-Light",
+      "location": "Embu",
       "jobType":"Freelance",
-      "description": "Design and optimize physical warehouse spaces and processes."
+      "description": "Help us in leading stand ups."
     },
     {
       "id": "67903c3ac3f38e84297d0020320",
@@ -89,12 +80,12 @@
       "companyName": "Medicare Hospital",
       "location": "Kisumu",
       "jobType":"Remote",
-      "description": "Monitor progress to ensure that milestones are being met across various projects and programs."
+      "description": "Monitor progress to ensure that milestones are being met."
     },
     {
       "id": "67903c3ac3f38e84297d0020320",
       "createdon": 1669638563406,
-      "jobTitle": "Service Engineer",
+      "jobTitle": "Software Engineer",
       "companyName": "Medicare Hospital",
       "location": "Embu",
       "jobType":"Remote",

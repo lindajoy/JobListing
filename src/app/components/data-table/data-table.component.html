@@ -4,8 +4,8 @@
        Job Title
      </button>
      <ul class="dropdown-menu">
-       <li *ngFor="let row of tableData$ | async">
-         <a class="dropdown-item" href="#" (click)="filterByField(row.jobTitle,'jobTitle')">{{ row.jobTitle }}</a>
+       <li *ngFor="let jobTitle of uniqueJobTypes(tableData$ | async,'jobTitle')">
+         <a class="dropdown-item" href="#" (click)="filterByField(jobTitle,'jobTitle')">{{ jobTitle }}</a>
        </li>
      </ul>
    </div>
@@ -46,26 +46,7 @@
    <button class="btn btn-danger" (click)="reset()">Reset All FIlters</button>
  </div>
 
- <!-- <div class="container mt-2">
-   <div class="row row-cols-1 row-cols-md-3 g-4">
-     <div class="col" *ngFor="let row of tableData$ | async">
-       <div class="card">
-         <div class="card-body">
-           <h5 class="card-title job-title">{{ row.jobTitle }}, {{row.location}}</h5>
-         </div>
-         <ul class="list-group list-group-flush">
-           <li class="job-title list-group-item">
-             <h6>{{ row.jobType }}</h6>
-           </li>
-           <li class="job-title list-group-item">
-             <h6>{{ row.companyName }}</h6>
-           </li>
-           <li class="list-group-item">{{ row.description }}</li>
-         </ul>
-       </div>
-     </div>
-   </div>
- </div> -->
+
 
  <div class="table-container">
  <table class="table table-light table-striped-columns">
