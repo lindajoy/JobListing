@@ -43,7 +43,7 @@
       "jobTitle": "Engineering Manager",
       "companyName": "Microsoft",
       "location": "Nairobi",
-      "jobType":"Remote, Freelance",
+      "jobType":"Remote",
       "description": "Manage a team of remarkable software engineers"
     },
     {
@@ -61,7 +61,7 @@
       "jobTitle": "Javascript Developer",
       "companyName": "Azure Cloud Services",
       "location": "Cape Town",
-      "jobType":"Remote, Freelance",
+      "jobType":"Remote",
       "description": "Write awesome Javascript code and help us build the next top notch application"
     },
     {
@@ -70,7 +70,7 @@
       "jobTitle": "UX/UI designer",
       "companyName": "Kimemia's company",
       "location": "Dodoma",
-      "jobType":"Remote, Freelance",
+      "jobType":"Remote",
       "description": "Create user-centered and visually appealing interfaces by understanding user needs."
     },
     {
@@ -81,6 +81,24 @@
       "location": "Arusha",
       "jobType":"Freelance",
       "description": "Design and optimize physical warehouse spaces and processes."
+    },
+    {
+      "id": "67903c3ac3f38e84297d0020320",
+      "createdon": 1567638563516,
+      "jobTitle": "Program Manager",
+      "companyName": "Medicare Hospital",
+      "location": "Kisumu",
+      "jobType":"Remote",
+      "description": "Monitor progress to ensure that milestones are being met across various projects and programs."
+    },
+    {
+      "id": "67903c3ac3f38e84297d0020320",
+      "createdon": 1669638563406,
+      "jobTitle": "Service Engineer",
+      "companyName": "Medicare Hospital",
+      "location": "Embu",
+      "jobType":"Remote",
+      "description": "Monitor progress to ensure that services are rendered well."
     }
   ] 
 }

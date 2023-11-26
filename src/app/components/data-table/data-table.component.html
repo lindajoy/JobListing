@@ -73,7 +73,7 @@
       <tr>
         <th scope="col" *ngFor="let headerItem of headerRow" (click)="onSort(headerItem)">
           <div class="d-flex">
-            <h6>{{ headerItem.header }}</h6>
+            <h5>{{ headerItem.header }}</h5>
   
             <div class="d-flex flex-column ms-2" *ngIf="headerItem.hasSort" >
               <i
