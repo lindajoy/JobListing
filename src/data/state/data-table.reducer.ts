@@ -24,10 +24,6 @@ export const dataTableReducer = createReducer(
 
   on(DataTableActions.setSortKey, (state, { sortKey }) => {
     sortKey = sortKey?.toLowerCase();
-    console.log('Sortkey', sortKey)
-    console.log('Sortkey2', state.sortKey);
-
-
     let sortDirection;
     if (sortKey !== state.sortKey) {
       console.log(state.sortKey);
