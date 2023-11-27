@@ -4,7 +4,7 @@
       {
       "id": "583c3ac3f38e84297c002546",
       "createdon": 1671032563515,
-      "jobTitle": "Project Manager",
+      "jobTitle": "Software Engineer",
       "companyName": "D-Light",
       "location": "Nairobi",
       "jobType":"Freelance",
@@ -13,7 +13,7 @@
     {
       "id": "583c3ac3f38e84297c0020323",
       "createdon": 1661032563516,
-      "jobTitle": "Program Manager",
+      "jobTitle": "Software Engineer",
       "companyName": "Microsoft",
       "location": "Kampala",
       "jobType":"Freelance",
@@ -49,7 +49,7 @@
     {
       "id": "97903c3ac3f38e84297c0020320",
       "createdon": 1675532563516,
-      "jobTitle": "Javascript Developer",
+      "jobTitle": "Support Engineer",
       "companyName": "D-Light",
       "location": "Eldoret",
       "jobType":"Contract",
@@ -67,7 +67,7 @@
     {
       "id": "67903c3ac3f38e84297c0020320",
       "createdon": 1566632563516,
-      "jobTitle": "Mechanical Engineer",
+      "jobTitle": "Software Engineer",
       "companyName": "D-Light",
       "location": "Embu",
       "jobType":"Freelance",
@@ -76,7 +76,7 @@
     {
       "id": "67903c3ac3f38e84297d0020320",
       "createdon": 1567638563516,
-      "jobTitle": "Program Manager",
+      "jobTitle": "Software Engineer",
       "companyName": "Medicare Hospital",
       "location": "Kisumu",
       "jobType":"Remote",

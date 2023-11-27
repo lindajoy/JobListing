@@ -38,7 +38,6 @@ import {MatFormFieldModule} from '@angular/material/form-field';
         EffectsModule.forRoot([]),
         EffectsModule.forFeature([DataTableEffects]),
         StoreModule.forFeature('dataTable',dataTableReducer ),
-
         StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
     ]
 })
