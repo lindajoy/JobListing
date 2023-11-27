@@ -1,8 +1,5 @@
 import { Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
-import { invokeJobsAPI } from './jobs/store/jobs.action';
-import { selectJobs } from './jobs/store/jobs.selector';
 import { setFilterBy } from '../data/state/data-table.action'
-import { JobReducer } from './jobs/store/jobs.reducer';
 import { select, Store } from '@ngrx/store';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
@@ -28,14 +25,10 @@ export class AppComponent implements OnInit, OnDestroy {
   ];
 
   constructor(private store: Store, private jobService: JobService) {}
-  jobs$ = this.store.pipe(select(selectJobs));
   data$!: Observable<any[] | null>;
   job!: any[];
 
   ngOnInit(): void {
-    this.jobs$.subscribe((a) => (this.job = a));
-    this.store.dispatch(invokeJobsAPI());
-
     this.data$ = this.jobService.get()
                      .pipe(startWith(null));
 
@@ -51,18 +44,6 @@ export class AppComponent implements OnInit, OnDestroy {
           })
         );
       });
-  }
-
-  someMethod(value: string) {
-    const query = value.trim().toLocaleLowerCase();
-    this.store.dispatch(
-      setFilterBy({
-        filters: {
-          filterBy: ['location'],
-          query
-        },
-      })
-    );
   }
 
   ngOnDestroy(): void {

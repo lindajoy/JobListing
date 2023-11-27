@@ -20,7 +20,6 @@ export const selectData = createSelector(
   (tableData, sortDirection, sortKey, filterQuery, filterBy) => {
    ;
     let filteredData = [...tableData];
-    // Filter Array
     if (filterQuery !== '') {
       filteredData = filteredData.filter((item) => {
         const result = filterBy
