@@ -8,6 +8,7 @@ import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { filter, map, startWith } from 'rxjs/operators';
 import { JobService } from './services/jobs.service';
+import { SubSink } from 'subsink';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,7 @@ import { JobService } from './services/jobs.service';
 })
 export class AppComponent implements OnInit, OnDestroy {
   searchControl = new FormControl('');
+  private subs = new SubSink();
   headerRow = [
     { header: 'Date Posted', key: 'createdOn', hasSort: true },
     { header: 'Company', key: 'companyName ', hasSort: false },
@@ -53,7 +55,6 @@ export class AppComponent implements OnInit, OnDestroy {
 
   someMethod(value: string) {
     const query = value.trim().toLocaleLowerCase();
-    console.log(typeof(query));
     this.store.dispatch(
       setFilterBy({
         filters: {
@@ -64,5 +65,7 @@ export class AppComponent implements OnInit, OnDestroy {
     );
   }
 
-  ngOnDestroy(): void {}
+  ngOnDestroy(): void {
+    this.subs.unsubscribe();
+  }
 }

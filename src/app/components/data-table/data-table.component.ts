@@ -7,6 +7,7 @@ import * as dataTableActions from '../../../data/state/data-table.action';
 import * as dataTableSelectors from '../../../data/state/data-table.selector';
 import { DataTableState } from 'src/app/interfaces/jobInterface';
 import { setFilterBy } from '../../../data/state/data-table.action';
+import { SubSink } from 'subsink';
 
 
 @Component({
@@ -21,6 +22,7 @@ export class DataTableComponent implements OnInit {
   jobTitle!: string[];
   locations!: string[];
   filteredData!: any[]
+  private subs = new SubSink();
 
   public sortDirection$!: Observable<string>;
   public sortKey$!: Observable<string>;
@@ -32,14 +34,11 @@ export class DataTableComponent implements OnInit {
   headers = ['Job Title', 'Company Name', 'Job Type','Location' ,'Description'];
 
   ngOnInit(): void {
-  
     this.store.dispatch(dataTableActions.setData({ data: this.data }));
     this.tableData$ = this.store.select(dataTableSelectors.selectData);
     this.sortKey$ = this.store.select(dataTableSelectors.selectSortKey);
     this.sortDirection$ = this.store.select(dataTableSelectors.selectSortDirection);
     
-
-
   }
 
   public onSort(headerItem:any): void {
@@ -78,12 +77,12 @@ export class DataTableComponent implements OnInit {
         },
       })
     );
-    this.tableData$.subscribe(a => this.filteredData = a)
+    this.tableData$.subscribe(filtered => this.filteredData = filtered);
     this.store.dispatch(dataTableActions.setData({ data: this.filteredData }));
-    // this.tableData$ = this.store.select(dataTableSelectors.selectData);
   }
 
   ngOnDestroy(): void {
     this.store.dispatch(dataTableActions.resetDataTableStore());
+    this.subs.unsubscribe();
   }
 }

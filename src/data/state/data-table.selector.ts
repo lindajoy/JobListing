@@ -18,18 +18,13 @@ export const selectData = createSelector(
   selectFilterQuery,
   selectFilterBy,
   (tableData, sortDirection, sortKey, filterQuery, filterBy) => {
-    console.log(tableData);
+   ;
     let filteredData = [...tableData];
     // Filter Array
     if (filterQuery !== '') {
-      console.log('Filtered data here!', filteredData);
       filteredData = filteredData.filter((item) => {
         const result = filterBy
           .map((filterBy) => {
-            console.log(filterBy);
-            console.log(item[filterBy]);
-            console.log(item[filterBy]?.toLowerCase().includes(filterQuery));
-
             return item[filterBy]?.toLowerCase().includes(filterQuery);
 
           })

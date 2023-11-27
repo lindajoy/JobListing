@@ -26,7 +26,6 @@ export const dataTableReducer = createReducer(
     sortKey = sortKey?.toLowerCase();
     let sortDirection;
     if (sortKey !== state.sortKey) {
-      console.log(state.sortKey);
       sortDirection = 'asc';
     } else {
       sortDirection = setSortDirection(state.sortDirection);
