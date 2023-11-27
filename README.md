@@ -12,19 +12,19 @@ This application showcases a comprehensive list of jobs, enabling effortless bro
 Step 1 : Run npm install (Ensure you have deleted the node modules and package-lock.json)
 
 ```
-Run npm install
+Run: npm install
 ```
 
 Step 2: Serve the application 
 
 ```
-Run ng serve
+Run: ng serve
 ```
 
 Step 4: Simulate the restful API. 
 
 ```
-Run npm run json-run
+Run: npm run json-run
 
 ```
 
