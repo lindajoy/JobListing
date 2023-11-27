@@ -25,7 +25,6 @@ export const selectData = createSelector(
         const result = filterBy
           .map((filterBy) => {
             return item[filterBy]?.toLowerCase().includes(filterQuery);
-
           })
           .some((item) => item);
         return result;

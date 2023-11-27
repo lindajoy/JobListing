@@ -6,17 +6,8 @@ import { Observable, EMPTY } from 'rxjs';
 
 import * as DataTableActions from './data-table.action';
 
-
 @Injectable()
 export class DataTableEffects {
-  // loadDataTables$ = createEffect(() => {
-  //   return this.actions$.pipe( 
-
-  //     ofType(DataTableActions.loadDataTables),
-  //     /** An EMPTY observable only emits completion. Replace with your own observable API request */
-  //     concatMap(() => EMPTY as Observable<{ type: string }>)
-  //   );
-  // });
   constructor(private actions$: Actions) {}
 
 }

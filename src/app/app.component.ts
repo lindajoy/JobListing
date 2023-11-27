@@ -21,7 +21,7 @@ export class AppComponent implements OnInit, OnDestroy {
     { header: 'Job Title', key: 'jobTitle', hasSort: false },
     { header: 'JobType', key: 'jobType', hasSort: false},
     { header: 'Location', key: 'location', hasSort: true },
-    { header: 'Description', key: 'description', hasSort: false },
+    { header: 'Description', key: 'description', hasSort: true },
   ];
 
   constructor(private store: Store, private jobService: JobService) {}

@@ -5,7 +5,7 @@ import { Store } from '@ngrx/store';
 
 import * as dataTableActions from '../../../data/state/data-table.action';
 import * as dataTableSelectors from '../../../data/state/data-table.selector';
-import { DataTableState } from 'src/app/interfaces/jobInterface';
+import { DataTableState, Job } from 'src/app/interfaces/jobInterface';
 import { setFilterBy } from '../../../data/state/data-table.action';
 import { SubSink } from 'subsink';
 
@@ -16,7 +16,7 @@ import { SubSink } from 'subsink';
   styleUrl: './data-table.component.scss'
 })
 export class DataTableComponent implements OnInit {
-  @Input() data!: any[];
+  @Input() data!: Job[];
   @Input() headerRow!: any[];
   countries!: string[];
   jobTitle!: string[];
@@ -28,7 +28,6 @@ export class DataTableComponent implements OnInit {
   public sortKey$!: Observable<string>;
   public tableData$!: Observable<any>;
   private sortKeySubject = new BehaviorSubject<string>('createdOn');
-
 
   constructor(private store: Store<DataTableState>) {}
   headers = ['Job Title', 'Company Name', 'Job Type','Location' ,'Description'];
