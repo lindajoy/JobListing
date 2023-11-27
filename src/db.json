@@ -4,11 +4,11 @@
       {
       "id": "583c3ac3f38e84297c002546",
       "createdon": 1671032563515,
-      "jobTitle": "Support Engineer",
+      "jobTitle": "Project Manager",
       "companyName": "D-Light",
       "location": "Nairobi",
       "jobType":"Freelance",
-      "description": "Fix the hotfixess on our platform"
+      "description": "Help in organizing different projects"
     },
     {
       "id": "583c3ac3f38e84297c0020323",
@@ -49,11 +49,11 @@
     {
       "id": "97903c3ac3f38e84297c0020320",
       "createdon": 1675532563516,
-      "jobTitle": "Scrum Master",
+      "jobTitle": "Javascript Developer",
       "companyName": "D-Light",
       "location": "Eldoret",
       "jobType":"Contract",
-      "description": "Help us in creating awesome stand ups."
+      "description": "Write awesome Javascript code."
     },
     {
       "id": "67903c3ac3f38e84297c0020320",
@@ -67,11 +67,11 @@
     {
       "id": "67903c3ac3f38e84297c0020320",
       "createdon": 1566632563516,
-      "jobTitle": "Scrum Master",
+      "jobTitle": "Mechanical Engineer",
       "companyName": "D-Light",
       "location": "Embu",
       "jobType":"Freelance",
-      "description": "Help us in leading stand ups."
+      "description": "Help us in fixing Machinery."
     },
     {
       "id": "67903c3ac3f38e84297d0020320",

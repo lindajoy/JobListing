@@ -34,7 +34,6 @@ export class AppComponent implements OnInit, OnDestroy {
     this.jobs$.subscribe((a) => (this.job = a));
     this.store.dispatch(invokeJobsAPI());
 
-
     this.data$ = this.jobService.get()
                      .pipe(startWith(null));
 
@@ -44,7 +43,7 @@ export class AppComponent implements OnInit, OnDestroy {
         this.store.dispatch(
           setFilterBy({
             filters: {
-              filterBy: ['location', 'jobTitle', 'companyName', 'description','jobType'],
+              filterBy: ['location', 'jobTitle', 'companyName', 'description', 'jobType'],
               query,
             },
           })
