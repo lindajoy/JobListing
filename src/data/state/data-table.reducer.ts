@@ -59,7 +59,6 @@ export function DataTableReducer(state: DataTableState, action: Action) {
   return dataTableReducer(state, action);
 }
 
-// Utils
 export function setSortDirection(sortDirection: string): string {
   switch (sortDirection) {
     case 'asc':
