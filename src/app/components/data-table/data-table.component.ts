@@ -27,17 +27,14 @@ export class DataTableComponent implements OnInit {
   public sortDirection$!: Observable<string>;
   public sortKey$!: Observable<string>;
   public tableData$!: Observable<any>;
-  private sortKeySubject = new BehaviorSubject<string>('createdOn');
-
+  
   constructor(private store: Store<DataTableState>) {}
-  headers = ['Job Title', 'Company Name', 'Job Type','Location' ,'Description'];
 
   ngOnInit(): void {
     this.store.dispatch(dataTableActions.setData({ data: this.data }));
     this.tableData$ = this.store.select(dataTableSelectors.selectData);
     this.sortKey$ = this.store.select(dataTableSelectors.selectSortKey);
     this.sortDirection$ = this.store.select(dataTableSelectors.selectSortDirection);
-    
   }
 
   public onSort(headerItem:any): void {
