@@ -18,8 +18,12 @@ export const selectData = createSelector(
   selectFilterQuery,
   selectFilterBy,
   (tableData, sortDirection, sortKey, filterQuery, filterBy) => {
-   ;
+    console.log(tableData);
+    debugger;
+   
     let filteredData = [...tableData];
+    console.log('Filtered data:',filteredData)
+    debugger;
     if (filterQuery !== '') {
       filteredData = filteredData.filter((item) => {
         const result = filterBy

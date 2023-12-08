@@ -12,4 +12,5 @@ export class JobService {
   get() { 
     return this.http.get<Job[]>('http://localhost:3000/jobs');
   }
+
 }

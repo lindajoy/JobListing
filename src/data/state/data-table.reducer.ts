@@ -1,6 +1,7 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import * as DataTableActions from './data-table.action';
 import { DataTableState } from '../../app/interfaces/jobInterface';
+import { selectTableData } from './data-table.selector';
 
 export const INITIAL_FILTER_KEY = { filterKey: '', query: '' } 
 
@@ -35,6 +36,16 @@ export const dataTableReducer = createReducer(
       sortKey,
       sortDirection
     };
+  }),
+
+
+  on(DataTableActions.addNewJob, (state, { newJob }) => {   
+    const job = {...newJob, createdon: Math.floor(Date.now() / 1000), id: Math.random()}
+    return {
+      ...state,
+      tableData:[job, ...state.tableData]
+    }
+   
   }),
 
   on(DataTableActions.resetDataTableStore, state => {

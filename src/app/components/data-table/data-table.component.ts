@@ -8,8 +8,6 @@ import * as dataTableSelectors from '../../../data/state/data-table.selector';
 import { DataTableState, Job } from 'src/app/interfaces/jobInterface';
 import { setFilterBy } from '../../../data/state/data-table.action';
 import { SubSink } from 'subsink';
-
-
 @Component({
   selector: 'app-data-table',
   templateUrl: './data-table.component.html',
@@ -18,9 +16,7 @@ import { SubSink } from 'subsink';
 export class DataTableComponent implements OnInit {
   @Input() data!: Job[];
   @Input() headerRow!: any[];
-  countries!: string[];
-  jobTitle!: string[];
-  locations!: string[];
+  
   filteredData!: any[]
   private subs = new SubSink();
 
@@ -50,7 +46,7 @@ export class DataTableComponent implements OnInit {
     return date.toLocaleDateString('en-US')
    }
 
-  reset (){
+  reset() {
     this.store.dispatch(dataTableActions.resetDataTableStore());
     this.store.dispatch(dataTableActions.setData(({ data: this.data })));
   }

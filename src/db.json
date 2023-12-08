@@ -49,6 +49,24 @@
     },
     {
       "id": "3903c3ac3f38e84297c0020320",
+      "createdon": 1653002663516,
+      "jobTitle": "Consultant",
+      "companyName": "D-Light",
+      "location": "Kigali",
+      "jobType":"Fulltime",
+      "description": "Fix the hotfixes/Production issues on our platform"
+    },
+    {
+      "id": "3903c3ac3f38e84297c0020320",
+      "createdon": 1653002663516,
+      "jobTitle": "Hardware Engineer",
+      "companyName": "D-Light",
+      "location": "Kigali",
+      "jobType":"Fulltime",
+      "description": "Fix the hotfixes/Production issues on our platform"
+    },
+    {
+      "id": "3903c3ac3f38e84297c0020320",
       "createdon": 1666632563517,
       "jobTitle": "Software Engineer",
       "companyName": "Microsoft",

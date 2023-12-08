@@ -1,0 +1,21 @@
+<form #addJobForm= "ngForm" (ngSubmit) = "onSubmit(addJobForm)" >
+    <label for="job-title">jobTitle: </label>
+    <input id="job-title" type="text" ngModel name="jobTitle">
+  
+    <label for="Company">companyName: </label>
+    <input id="Company" type="text" ngModel name="companyName">
+
+    <label for="jobType">jobType: </label>
+    <input id="jobType" type="text" ngModel name="jobType">
+
+    <label for="location">locationName: </label>
+    <input id="Company" type="text" ngModel  name="location">
+
+    <label for="description">description: </label>
+    <input id="description" type="text" ngModel name="description">
+
+    <button type="submit">
+      Save
+    </button>
+</form>
+

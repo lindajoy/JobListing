@@ -11,6 +11,9 @@
     />
   </div>
 </div>
+
+<app-addform> </app-addform>
+
 <ng-container *ngIf="(data$ | async) as data; let error">
 <app-data-table [data]="data" [headerRow]="headerRow"></app-data-table>
 </ng-container>

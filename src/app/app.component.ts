@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { filter, map, startWith } from 'rxjs/operators';
 import { JobService } from './services/jobs.service';
 import { SubSink } from 'subsink';
+import { Job } from './interfaces/jobInterface';
 
 @Component({
   selector: 'app-root',
@@ -25,8 +26,8 @@ export class AppComponent implements OnInit, OnDestroy {
   ];
 
   constructor(private store: Store, private jobService: JobService) {}
-  data$!: Observable<any[] | null>;
-  job!: any[];
+  data$!: Observable<Job[] | null>;
+  job!: Job[];
 
   ngOnInit(): void {
     this.data$ = this.jobService.get()
