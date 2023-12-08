@@ -1,0 +1,21 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:  40px;
+  }
+  
+  .column-form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+  }
+  
+  label {
+    margin-bottom: 5px;
+  }
+  

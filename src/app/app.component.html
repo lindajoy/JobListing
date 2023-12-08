@@ -9,10 +9,9 @@
       placeholder="Search..."
       aria-describedby="filter"
     />
+    <img class="image_add" src="/assets/add.png" (click)="openDialog()">
   </div>
 </div>
-
-<app-addform> </app-addform>
 
 <ng-container *ngIf="(data$ | async) as data; let error">
 <app-data-table [data]="data" [headerRow]="headerRow"></app-data-table>

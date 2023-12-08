@@ -1,4 +1,13 @@
 import { Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
+import {
+  MatDialog,
+  MAT_DIALOG_DATA,
+  MatDialogRef,
+  MatDialogTitle,
+  MatDialogContent,
+  MatDialogActions,
+  MatDialogClose,
+} from '@angular/material/dialog';
 import { setFilterBy } from '../data/state/data-table.action'
 import { select, Store } from '@ngrx/store';
 import { FormControl } from '@angular/forms';
@@ -7,6 +16,7 @@ import { filter, map, startWith } from 'rxjs/operators';
 import { JobService } from './services/jobs.service';
 import { SubSink } from 'subsink';
 import { Job } from './interfaces/jobInterface';
+import { AddformComponent } from './addform/addform.component';
 
 @Component({
   selector: 'app-root',
@@ -25,7 +35,9 @@ export class AppComponent implements OnInit, OnDestroy {
     { header: 'Description', key: 'description', hasSort: true },
   ];
 
-  constructor(private store: Store, private jobService: JobService) {}
+  constructor(private store: Store, 
+              private jobService: JobService,
+              public dialog: MatDialog) {}
   data$!: Observable<Job[] | null>;
   job!: Job[];
 
@@ -46,6 +58,16 @@ export class AppComponent implements OnInit, OnDestroy {
         );
       });
   }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(AddformComponent, {
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+
 
   ngOnDestroy(): void {
     this.subs.unsubscribe();
