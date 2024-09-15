@@ -29,6 +29,8 @@ export class DataTableComponent implements OnInit {
     this.store.dispatch(dataTableActions.setData({ data: this.data }));
     this.tableData$ = this.store.select(dataTableSelectors.selectData);
     this.sortKey$ = this.store.select(dataTableSelectors.selectSortKey);
+
+    
     this.sortDirection$ = this.store.select(dataTableSelectors.selectSortDirection);
   }
 
